@@ -1,0 +1,141 @@
+/* Общие стили для хедера */
+.header {
+  position: fixed; /* Фиксируем хедер вверху экрана  */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Хедер должен быть поверх другого контента */
+  background-color: #1c1c1c; /* Примерный цвет фона из макета */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px; /* Высота хедера */
+  padding: 0 20px;
+}
+
+/* Стили для логотипа */
+.header-logo img {
+  height: 24px; /* Размер лого */
+}
+
+/* Скрываем десктопную навигацию на мобильных устройствах */
+.header-nav {
+  display: none;
+}
+
+/* Стили для кнопки бургер-меню */
+.burger-menu-btn {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.burger-menu-icon {
+  fill: #fff; /* Цвет иконки */
+}
+
+/* Стили для мобильного меню */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #121212; /* Цвет фона меню из макета */
+  transform: translateX(100%); /* Прячем меню за правым краем экрана */
+  transition: transform 300ms ease-in-out;
+  z-index: 1001; /* Меню должно быть поверх хедера */
+  padding: 20px;
+}
+
+/* Класс, который будет добавляться через JS для открытия меню */
+.mobile-menu.is-open {
+  transform: translateX(0); /* Возвращаем меню в видимую область */
+}
+
+.mobile-menu-container {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-menu-close-icon {
+  fill: #fff;
+}
+
+.mobile-menu-nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.mobile-menu-nav-link {
+  font-size: 24px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  transition: color 250ms ease-in-out;
+}
+
+.mobile-menu-nav-link:hover,
+.mobile-menu-nav-link:focus {
+  color: #a450e8; /* Цвет при наведении/фокусе */
+}
+
+/* Адаптивность: Планшет (768px и больше) */
+@media screen and (min-width: 768px) {
+  .header-container {
+    height: 80px;
+    padding: 0 32px;
+  }
+
+  .burger-menu-btn {
+    display: none; /* Скрываем кнопку бургера */
+  }
+
+  .header-nav {
+    display: block; /* Показываем обычную навигацию */
+  }
+
+  .header-nav-list {
+    display: flex;
+    gap: 24px;
+  }
+
+  .header-nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 250ms ease-in-out;
+  }
+
+  .header-nav-link:hover,
+  .header-nav-link:focus {
+    color: #a450e8;
+  }
+}
+
+/* Адаптивность: Десктоп (1440px и больше) */
+@media screen and (min-width: 1440px) {
+  .header-container {
+    padding: 0 60px; /* Увеличиваем отступы для большого экрана */
+  }
+}
