@@ -1,10 +1,13 @@
 <header class="header">
   <div class="header-container container">
-    <a href="./index.html" class="header-logo">
-      <img src="./img/logo.svg" alt="ArtistsHub logo" />
+    <a href="./index.html" class="header-logo" aria-label="Go to homepage">
+      <svg class="header-logo-icon" aria-hidden="true">
+        <use href="./img/sprite.svg#icon-logo"></use>
+      </svg>
+      <span class="sr-only">ArtistsHub</span>
     </a>
 
-    <nav class="header-nav">
+    <nav class="header-nav" aria-label="Main navigation">
       <ul class="header-nav-list">
         <li><a href="#artists" class="header-nav-link">Artists</a></li>
         <li><a href="#about" class="header-nav-link">About Us</a></li>
@@ -16,28 +19,38 @@
       type="button"
       class="burger-menu-btn"
       aria-label="Open mobile menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
       data-menu-open
     >
-      <svg class="burger-menu-icon" width="24" height="24">
-        <use href="./img/icons.svg#icon-menu"></use>
+      <svg class="burger-menu-icon" aria-hidden="true">
+        <use href="./img/sprite.svg#icon-icon_menu_mobile_navbar"></use>
       </svg>
     </button>
   </div>
 
-  <div class="mobile-menu" data-menu>
+  <div class="mobile-menu" id="mobile-menu" data-menu hidden>
     <div class="mobile-menu-container">
-      <button
-        type="button"
-        class="mobile-menu-close-btn"
-        aria-label="Close mobile menu"
-        data-menu-close
-      >
-        <svg class="mobile-menu-close-icon" width="20" height="20">
-          <use href="./img/icons.svg#icon-close"></use>
-        </svg>
-      </button>
+      <div class="mobile-menu-top">
+        <a href="./index.html" class="header-logo">
+          <svg class="header-logo-icon" aria-hidden="true">
+            <use href="./img/sprite.svg#icon-logo"></use>
+          </svg>
+        </a>
 
-      <nav class="mobile-menu-nav">
+        <button
+          type="button"
+          class="mobile-menu-close-btn"
+          aria-label="Close mobile menu"
+          data-menu-close
+        >
+          <svg class="mobile-menu-close-icon" aria-hidden="true">
+            <use href="./img/sprite.svg#icon-icon_close"></use>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="mobile-menu-nav" aria-label="Mobile navigation">
         <ul class="mobile-menu-nav-list">
           <li>
             <a href="#artists" class="mobile-menu-nav-link" data-menu-link
